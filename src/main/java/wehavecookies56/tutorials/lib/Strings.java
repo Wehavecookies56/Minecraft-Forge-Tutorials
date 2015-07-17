@@ -6,4 +6,6 @@ public class Strings {
 
 	public static final String tutorialBlock = "tutorialblock";
 
+	public static final String tabTutorial = "tabtutorial";
+
 }

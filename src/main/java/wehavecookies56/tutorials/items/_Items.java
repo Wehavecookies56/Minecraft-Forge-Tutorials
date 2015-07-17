@@ -5,6 +5,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import wehavecookies56.tutorials.TutorialMod;
 import wehavecookies56.tutorials.lib.Reference;
 import wehavecookies56.tutorials.lib.Strings;
 
@@ -16,7 +17,7 @@ public class _Items {
 	 * Method used for initialising items
 	 */
 	public static void init(){
-		tutorialItem = new ItemTutorialItem().setUnlocalizedName(Strings.tutorialItem).setCreativeTab(CreativeTabs.tabMaterials);
+		tutorialItem = new ItemTutorialItem().setUnlocalizedName(Strings.tutorialItem).setCreativeTab(TutorialMod.tabTutorial);
 	}
 
 	/**

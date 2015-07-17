@@ -7,6 +7,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import wehavecookies56.tutorials.TutorialMod;
 import wehavecookies56.tutorials.lib.Reference;
 import wehavecookies56.tutorials.lib.Strings;
 
@@ -19,7 +20,7 @@ public class _Blocks {
 	 * Method used for initialising blocks
 	 */
 	public static void init(){
-		tutorialBlock = new BlockTutorial(Material.iron, 1.0f, 1.0f, Strings.tutorialBlock).setCreativeTab(CreativeTabs.tabBlock);
+		tutorialBlock = new BlockTutorial(Material.iron, 1.0f, 1.0f, Strings.tutorialBlock).setCreativeTab(TutorialMod.tabTutorial);
 	}
 
 	/**

@@ -1,3 +1,4 @@
 tile.tutorialblock.name=Tutorial Block
 item.tutorialitem.name=Tutorial Item
 item.tutorialitem.desc=Information
+itemGroup.tabtutorial
