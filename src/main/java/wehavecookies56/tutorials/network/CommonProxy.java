@@ -6,7 +6,8 @@ public class CommonProxy {
 
 	}
 
-	public void displayGuiTutorial(){
+	public void openGui(){
 
 	}
+
 }
