@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forge Tutorials</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js" type="text/javascript"></script>
+</head>
+<body>
+  <script type="text/javascript">
+     SyntaxHighlighter.all()
+  </script>
+  <nav class="navbar navbar-inverse">
+    <div class="container" id="navcontainer">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <a class="navbar-brand" id="brand">Minecraft Forge Tutorials</a>
+          <li class="active"><a href="#">Getting Started</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://wehavecookies56.github.io/Kingdom-Keys-Re-Coded">Kingdom Keys Re:Coded</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://wehavecookies56.github.io/Kingdom-Keys-Re-Coded">Kingdom Keys Re:Coded</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header">
+    <div class="container">
+      <h1>Getting Started</h1>
+      <p>Everything you'll need in order to start developing Minecraft mod using Minecraft Forge</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div id="intro">
+        <h2>Introduction</h2>
+        <hr>
+        <p>Hello I am Toby "Wehavecookies56" Wishart. Welcome to my site for Minecraft Forge Modding Tutorials! I am currently developing the Kingdom Keys Re:Coded mod for Minecraft and have decided to share some of my knowledge on Minecraft modding with Minecraft Forge.</p>
+        <p>These tutorials assume you are running Windows but mostly can be applied on any Operating System.</p> 
+        <p>They also assume you have basic knowledge of using a computer and programming in Java.</p>
+      </div>
+      <div id="needed">
+        <h2>Things you will need</h2>
+        <hr>
+        <h3>Java Development Kit</h3>
+        <p>The Java Development Kit (JDK) is an absolute requirement for developing anything with Java as Minecraft uses Java we require it to develop mods. It can be downloaded below. Make sure to check "Accept License Agreement" then download the version for your Operating System.</p>
+        <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Download</a></p>
+        <h3>Eclipse or IntelliJ IDEA</h3>
+        <p>These are Intergrated Development Envrionments (IDE) which help tremendously when developing anything in Java or even other programming languages. They offer a much wider set of features than any simple text editor such as error highlighting, code suggestions, quick method overrides and much, much more.</p>
+        <p>In this tutorial I will be showing how to setup your mod workspace in both Eclipse and IntelliJ IDEA. Which one you choose is based on preference, I personally prefer IntelliJ IDEA to Eclipse however Eclipse is the easier of the two to setup.</p>
+        <p>Remember, you only need one of these! Don't install both unless you want to try both before deciding which you want to use.</p>
+        <p>Make sure to download "Eclipse IDE for Java Developers" either directly through the site or using the Eclipse Installer.</p>
+        <p><a href="https://www.eclipse.org/downloads/">Download Eclipse</a></p>
+        <p>Make sure to download "Community".</p>
+        <p><a href="https://www.jetbrains.com/idea/#chooseYourEdition">Download IntelliJ IDEA</a></p>
+        <h3>Minecraft Forge MDK</h3>
+        <p>Minecraft Forge Mod Development Kit (MDK) are the tools required to setup Minecraft Forge for developing Mods</p>
+        <p>Make sure to download the "Mdk" for whichever version you want.</p>
+        <p><a href="http://files.minecraftforge.net/">Download</a></p>
+        <p>Setup of this will be explained later on this page.</p>
+        <h3>Git and a Github/Gitlab/Bitbucket account (Optional)</h3>
+        <p>Git is a version control system which allows for easy collaboration and makes it much easier to keep track of changes and revert them. Github/Gitlab/Bitbucket intergrate Git so your repository is stored online. </p>
+      </div>
+      <div id="setupmdk">
+        <h2>Setting up Minecraft Forge</h2>
+        <hr>
+        
+      </div>
+    </div>
+  </div>
+  <pre class="brush: java">
+    public static void main(String[] args) {
+      //Yay it's working 
+    }
+  </pre>
+  <div id="comments">
+    <div class="container">
+    <h2>Comments</h2>
+    <hr>
+    <div id="disqus_thread"></div>
+      <script>
+      /**
+      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+      */
+      var disqus_config = function () {
+      this.page.url = 'http://wehavecookies56.co.uk/Minecraft-Forge-Tutorials/'; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = 'MFT/Getting Started'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://wehavecookies56.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('#brand').click(function(e) {
+      return false;
+    });
+  </script>
+  <script id="dsq-count-scr" src="https://wehavecookies56.disqus.com/count.js" async></script>
+</body>
+</html>
