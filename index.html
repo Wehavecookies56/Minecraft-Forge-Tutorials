@@ -32,25 +32,13 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="https://wehavecookies56.github.io/Kingdom-Keys-Re-Coded">Kingdom Keys Re:Coded</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="#">No tutorials yet</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="https://wehavecookies56.github.io/Kingdom-Keys-Re-Coded">Kingdom Keys Re:Coded</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="#">No resources yet</a></li>
             </ul>
           </li>
           <li><a href="about.html">About</a></li>
@@ -66,13 +54,19 @@
   </div>
   <div class="content">
     <div class="container">
+     
+      <!-- INTRO -->
+     
       <div id="intro">
         <h2>Introduction</h2>
         <hr>
         <p>Hello I am Toby "Wehavecookies56" Wishart. Welcome to my site for Minecraft Forge Modding Tutorials! I am currently developing the Kingdom Keys Re:Coded mod for Minecraft and have decided to share some of my knowledge on Minecraft modding with Minecraft Forge.</p>
-        <p>These tutorials assume you are running Windows but mostly can be applied on any Operating System.</p> 
+        <p>These tutorials assume you are running Windows but mostly can be applied on any operating system. The setup is the only part that has variations between operating systems. I only have a Windows machine so I cannot make a tutorial for Mac OSX or Linux.</p> 
         <p>They also assume you have basic knowledge of using a computer and programming in Java.</p>
       </div>
+      
+      <!-- THINGS NEEDED -->
+      
       <div id="needed">
         <h2>Things you will need</h2>
         <hr>
@@ -93,20 +87,150 @@
         <p><a href="http://files.minecraftforge.net/">Download</a></p>
         <p>Setup of this will be explained later on this page.</p>
         <h3>Git and a Github/Gitlab/Bitbucket account (Optional)</h3>
-        <p>Git is a version control system which allows for easy collaboration and makes it much easier to keep track of changes and revert them. Github/Gitlab/Bitbucket intergrate Git so your repository is stored online. </p>
+        <p>Git is a version control system which allows for easy collaboration and makes it much easier to keep track of changes and revert them. Github/Gitlab/Bitbucket intergrate Git so your repository is stored online. If you don't want your source code to be publicly visible the make sure to use Gitlab or Bitbucket as private repositories cost on Github. When installing Git I recommend installing the "Git Credential Manager for Windows" which you can either install through the Git installer or from <a href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases">here</a>.</p>
+        <p><a href="https://git-scm.com/">Download Git</a></p>
+        <p>Sign up for any one of the following. Github is recommended.</p>
+        <p><a href="https://github.com/">Github</a></p>
+        <p>If you don't want to pay for a private repository Gitlab and Bitbucket offer them for free. Although Bitbucket is missing some features that Github and Gitlab have.</p>
+        <p><a href="https://about.gitlab.com/">Gitlab</a></p>
+        <p><a href="https://bitbucket.org/">Bitbucket</a></p>
       </div>
+      
+      <!-- GIT SETUP -->
+      
+      <div id="gitrepo">
+        <h2>Git repository setup (Optional)</h2>
+        <p>To setup a git repository make sure you installed Git and made an account on Github/Gitlab/Bitbucket, I will be using Github in this tutorial.</p>
+        <p>Firstly create a new repository on Github like so.</p>
+        <img src="http://i.imgur.com/3POcAe0.png" alt="Create New... > New Repository">
+        <p>Then enter a repository name and a description and tick "Initialize this repository with a README". Leave "Add .gitignore" to "None". You can add a license if you want. It should look something like the image below.</p>
+        <img src="http://i.imgur.com/7Ihh3n4.png" alt="Create a new repository">
+        <p>Once you have created the repository you are ready to clone the repository to your computer. To do this you need to decide on a location to clone your repository to such as your Documents, I will be using "D:\Documents\" in this tutorial.</p>
+        <p>To clone your repository right click inside your chosen folder and select "Git Bash Here" this will open up Git Bash in the folder you are currently in. It should look something like this with your username, computer name and the path to the folder you are in.</p>
+        <img src="http://i.imgur.com/dcJet3J.png" alt="Git bash">
+        <p>Once you have this open you can clone the repository by typing "git clone " with the url to the repository afterwards which can be found on your repository page on Github as seen below.</p>
+        <img src="http://i.imgur.com/vhv8L9P.png" alt="Github repository link">
+        <p>So in my case I would type "git clone https://github.com/Wehavecookies56/Minecraft-Forge-Tutorials.git" and press enter.</p>
+        <p>Once it is done it will create a folder with the name of your repository and will contain your README file and License file if you added one. You can now close Git bash as we do not want to use it in that folder anymore.</p>
+        <p>Now open Git Bash in your newly created repository folder, you should notice that it now has the name of the current branch which is master. If it has the branch name like it is in the image below, then you have correctly set up the Github repository!</p>
+        <img src="http://i.imgur.com/Tl4URa0.png" alt="Git Bash in repository">
+      </div>
+      
+      <!-- FORGE SETUP -->
+      
       <div id="setupmdk">
         <h2>Setting up Minecraft Forge</h2>
         <hr>
+        <p>Note: The latest version of Forge as of creating this tutorial is 1.9-12.16.1.1901 however this setup will be the same in the forseeable future. Versions before Forge Gradle was introduced will have a different setup process (I believe it was 1.7 when it was introduced).</p>
+        <p>If you have setup a Git repository then you will already have a folder for your workspace but if you didn't use Git then you will need to create a folder for your workspace I will be using "D:\Documents\Minecraft-Forge-Tutorials\".</p>
+        <p>Now you need to extract all the files from the Forge MDK .zip file into your workspace folder. Your folder should look similar to the image below. README.MD, LICENSE and .git are all files in the Github repository.</p>
+        <img src="http://i.imgur.com/VcR8x42.png" alt="Workspace folder contents">
+        <p>You can delete all the .txt files as none of them are needed especially the changelog for the forge version as you will most likely update later on anyway. If you are not using Git you can also delete the ".gitignore" file. So you should now have a folder looking like the image below.</p>
+        <img src="http://i.imgur.com/RRzKb2S.png" alt="Workspace folder without txt files">
+        <p>Now this is where the tutorial splits in to two paths. Which you will follow based on whether you are using Eclipse or IntelliJ IDEA. You can skip the one you are not using entirely.</p>
         
+        <!--ECLIPSE SETUP-->
+        
+        <h3>With Eclipse</h3>
+        <p>Forge has a very easy way to setup Eclipse built in so the process is rather effortless.</p>
+        <p>First of all you need to open up Command Prompt (CMD) in your workspace folder which can be done quite easily in Windows 10 (Windows 8 maybe?) by clicking "File > Open command <u>p</u>rompt" while in the workspace folder.</p>
+        <img src="http://i.imgur.com/oUz2rvP.png" alt="File > Open command prompt">
+        <p>You can also do it by holding the Shift key and right clicking inside the folder and selecting "Open command <u>w</u>indow here"</p>
+        <img src="http://i.imgur.com/7c4rRj6.png" alt="Open command window here">
+        <p>If you can't do either of these for whatever reason you can simply type "cmd" in the start menu then type "cd D:\Documents\Minecraft-Forge-Tutorials" and press enter of course with your own workspace path. Now to actually setup Forge, type "gradlew setupDecompWorkspace" and press enter. This will start the Forge setup process, this will probably take a couple of minutes depending on your computer. Once it has finished it should look similar to the image below. It will say "SKIPPED" next to one of the tasks if it has already done it before, if this is your first time setting up Forge it's unlikely to skip any of it.</p>
+        <img src="http://i.imgur.com/Hql8QCs.png" alt="Forge setup successful">
+        <p>Now you need to setup the workspace for Eclipse which is simply done by typing in the same command prompt window "gradlew eclipse". This should be very quick to complete, it will look something like the image below.</p>
+        <img src="http://i.imgur.com/tJy6luW.png" alt="Eclipse workspace successful">
+        <p>Your workspace folder should now contain a lot more folders and some more files. The important ones here are the "src", "run", "eclipse" and "build".<p> 
+        <p>The "src" folder is where all the code for your mod will be located as well as all the assets (textures, sounds, etc.) <p>
+        <p>The "run" folder is where all the Minecraft Client and Server files are located almost like the ".minecraft" folder. Folders like "resourcepacks", "saves" and "screenshots" will be inside it however it will be empty as you haven't ran Minecraft yet.<p>
+        <p>The "eclipse" folder is where the Eclipse workspace data is located, while you won't be modifying any of the files inside it, it is quite important and will be where we point Eclipse to.<p>
+        <p>The "build" folder is also another folder that doesn't contain anything important currently (other than temporary files) it will be where builds of your mod will be located. We won't be building a mod in this tutorial but will be covered in a separate tutorial.<p>
+        <p>Another important file is the "build.gradle" which stores the information for which Forge version to use while setting up, the name and version of your mod for the name of the build and more.</p>
+        <p>You can now launch Eclipse which will then ask you for a workspace location. This will be your "eclipse" folder. You can also tick "Use this as the default and do not ask again" if you don't want it to ask for the workspace location every time it starts.</p>
+        <img src="http://i.imgur.com/eLsdYQY.png" alt="Eclipse asking for workspace location">
+        <p>Click "OK" and Eclipse will open after some time. Once it starts up you should see "MDK Example" in the Project Explorer this means you have correctly setup Eclipse with Forge</p>
+        <img src="http://i.imgur.com/5I09HFP.png" alt="Eclipse with MDK Example" width="75%">
+        <p>Notice in the top right it says "Resource" (If it says "Java" then you don't need to do anything about it), this means that Eclipse is in the "Resource" perspective and we want to be in the "Java" perspective. To do this click the "Open Perspective" button next to the perspective name and select "Java". You should notice the layout looks different and the Project Explorer is now called Package Explorer.</p>
+        <img src="http://i.imgur.com/hiYULzM.png" alt="Eclipse in Java perspective" width="75%">
+        <p>Now you can launch the Minecraft Client (you can also run the Minecraft Server) this is a good test to check if everything is working fine. To launch it select "Client" in the dropdown next to the Run button shown in the image below.</p>
+        <img src="http://i.imgur.com/egTqnbR.png" alt="Run > Minecraft Client">
+        <p>If you get an error like this:</p>
+        <img src="http://i.imgur.com/jyb24RQ.png" alt="Eclipse launch error">
+        <p>Then select the project "MDK Example" in the Package Explorer and try launching it again.</p>
+        <p>Minecraft should successfully launch with Forge installed you may also notice that there is an example mod. We do not want this mod so we are going to delete it. To do this go to "src/main/java" folder and delete the "com" folder. In the "src/main/resources" folder there is the "mcmod.info" file which we also want to delete.</p>
+        <p>Congratulations! You have successfully setup Minecraft Forge with Eclipse.</p>
+        
+        <!--INTELLIJ IDEA SETUP-->
+        
+        <h3>With IntelliJ IDEA</h3>
+        <p>The setup of IDEA is a bit more complicated than Eclipse but is still fairly simple.</p>
+        <p>First thing's first we are not using Eclipse so we can delete the "eclipse" folder.</p>
+        <p>Next you will need to launch IDEA. You will be greeted with this window.</p>
+        <img src="http://i.imgur.com/8Zgz6pi.png" alt="IDEA Welcome screen">
+        <p>Click "Import Project" and navigate to your workspace folder and select the "build.gradle" like so.</p>
+        <img src="http://i.imgur.com/k5N6OT9.png" alt="build.gradle">
+        <p>Click "OK" and it will now come up with some options for importing the project. We can mostly leave the settings how they are other than ticking "Create directories for empty content roots automatically".</p>
+        <img src="http://i.imgur.com/rPn16HG.png" alt="Import project settings">
+        <p>Once it has done importing it will open into quite an empty looking window. It will also come up with "Unregistered VCS Root detected" you can ignore this.</p>
+        <img src="http://i.imgur.com/Jf2ceJq.png" alt="IDEA main window" width="75%">
+        <p>The first thing we want to do is actually setup Forge, so click the "Gradle" button on the right sidebar then navigate to "Tasks > forgegradle > setupDecompWorkspace".</p>
+        <img src="http://i.imgur.com/dslDDDJ.png" alt="Tasks > forgegradle > setupDecompWorkspace">
+        <p>Double click "setupDecompWorkspace" or right click and click "Run '...'" or press Ctrl+Shift+F10. It will now go through the setup of Forge which will take a couple of minutes or longer depending on your system. Once it is done there will be a green circle with "OK" next to "Run build"</p>
+        <img src="http://i.imgur.com/1esSWPB.png" alt="Run setupDecompWorkspace">
+        <p>Once it has finished click the "Refresh all gradle projects" button located at the top left of the "Gradle" sidebar</p>
+        <img src="http://i.imgur.com/DXomPQe.png" alt="Refresh gradle projects">
+        <p>You should notice there's a loading bar at the bottom of the screen. Once it has finished, navigate to "Tasks > forgegradle > genIntellijRuns" and run it the same way you ran "setupDecompWorkspace". This will create the launch configurations for launching the Minecraft Client and Server. This should take very little time, once it is done it will come up with a message like this</p>
+        <img src="http://i.imgur.com/Vm4dKjb.png" alt="Files changed message">
+        <p>Click "Yes", the project should now reload. We now need to edit the launch configurations as they will have errors. Go to the drop down menu next to the "Run" button and click "Edit Configurations..."</p>
+        <img src="http://i.imgur.com/aQ6tz4k.png" alt="Edit configurations">
+        <p>Now expand the "Application" section on the right of the window to reveal the "Minecraft Client" and "Minecraft Server" configurations which both have an "X" on the icon.</p>
+        <p>Select the "Minecraft Client" configuration and change the "Use classpath of m<u>o</u>dule:" to "Your-Project-Name_main". Do the same for the "Minecraft Server" configuration. Then click "OK" to apply the changes and close the window.</p>
+        <img src="http://i.imgur.com/yNph8qk.png" alt="Minecraft Client configuration">
+        <p>Now you should be able to launch the Minecraft Client and Server. By selecting it from the dropdown next to the "Run" button and then clicking that button.</p>
+        <img src="http://i.imgur.com/V5HXfwZ.png" alt="Run Minecraft Client">
+        <p>The Minecraft Client should launch with Forge installed.</p>
+        <p>To see the files in your project go to the "Project" on the left sidebar you can also open it by pressing Alt+1. This houses the file structure of your project, if you expand the folder which has the name of your project you will see all the files that are located in your workspace folder.</p>
+        <p>Your workspace folder should now contain a lot more folders and some more files than it orginally did. The important ones here are the "src", "run" and "build".<p> 
+        <p>The "src" folder is where all the code for your mod will be located as well as all the assets (textures, sounds, etc.) <p>
+        <p>The "run" folder is where all the Minecraft Client and Server files are located almost like the ".minecraft" folder. Folders like "resourcepacks", "saves" and "screenshots" will be inside it however it will be empty as you haven't ran Minecraft yet.<p>
+        <p>The "build" folder is also another folder that doesn't contain anything important currently (other than temporary files) it will be where builds of your mod will be located. We won't be building a mod in this tutorial but will be covered in a separate tutorial.<p>
+        <p>Another important file is the "build.gradle" which stores the information for which Forge version to use while setting up, the name and version of your mod for the name of the build and more.</p>
+        <p>If you are using Git you should notice that there are files which have red file names. This is because they are unstaged files to the repository, staged files will be green and files that are already on the repository will be white.</p>
+        <img src="http://i.imgur.com/6NggoAU.png" alt="Project structure">
+        <p>To learn how to stage files, make commits, and push commits continue to the next section.</p>
+        <p>Congratulations! You have successfully setup Minecraft Forge with IntelliJ IDEA.</p>
+      </div>
+      <div id="gitcommits">
+        <h2>Pushing and pulling files to/from your Git repository (Optional)</h2>
+        <p>Since this is also to do with Git you can skip this part if you're not using it.</p>
+        <p>Pushing files to a Git repository requires files to be different from the files currently in the repository as well as a commit.</p>
+        <p>A commit requires files to be staged so we will do that first. Open Git Bash in your workspace folder and type "git status" this will display a list of all the files unstaged and staged. It will also display if you're up to date with the repository.</p>
+        <img src="http://i.imgur.com/04BdmLC.png" alt="Git status">
+        <p>You may have noticed that there are some folders missing from the list, there are two reasons for this. Firstly git doesn't allow you to add empty folders so they do not show for now. The next reason is because the ".gitignore" file is a file which is set up by forge for us. It includes all the files related to Eclipse and IDEA it also ignores the "bin", "build", ".gradle" and "run" folders.</p>
+        <p>Now to actually stage the files for our commit. Which is done by using the "git add &lt;file&gt;" command. To add everything we can use "git add *"</p>
+        <img src="http://i.imgur.com/npltMOp.png" alt="Git add *">
+        <p>Once you have done this we can commit the files by using "git commit -m 'Commit Message'". The commit message should be something to describe the changes you have made.</p>
+        <img src="http://i.imgur.com/RUJkLni.png" alt="Git commit -m &quot;Initial forge setup&quot;">
+        <p>Now you have made the commit you can push it to the repository which is done by "git push origin &lt;branch&gt;" since we are using the master branch use "git push origin master"</p>
+        <img src="http://i.imgur.com/McxgNzH.png" alt="Git push origin master">
+        <p>You should now see the commits on your remote repository on Github/Gitlab/Bitbucket as well as the files.</p>
+        <p>If there have been changes to your repository from a location different to your local repository it will be behind to get the files changed on the repository you need to pull using "git pull". This will happen if you are collaborating with someone else or if you change a file through Github/Gitlab/Bitbucket.</p>
+        <p>And that's all for using Git.</p>
+      </div>
+      <div id="summary">
+        <h2>Summary</h2>
+        <p>Great, you've reached the end of this tutorial!</p>
+        <p>Here's a summary of what was learnt.</p>
+        <ul>
+          <li>You have setup a Git repository and pushed files to it (Optional)</li>
+          <li>You have setup Minecraft Forge with either Eclipse or IntelliJ IDEA</li>
+        </ul>
+        <p>Thank you for reading this tutorial, leave any feedback, questions or anything else in the comments section below.</p>
+        <p>This is the first tutorial I have made and plan to make many more tutorials so check back for more.</p>
       </div>
     </div>
   </div>
-  <pre class="brush: java">
-    public static void main(String[] args) {
-      //Yay it's working 
-    }
-  </pre>
   <div id="comments">
     <div class="container">
     <h2>Comments</h2>
@@ -131,7 +255,11 @@
       })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      <div id="footer">
+        <a href="#">Back to top</a>
+      </div>
     </div>
+    
   </div>
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

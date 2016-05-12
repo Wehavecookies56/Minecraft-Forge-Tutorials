@@ -81,9 +81,28 @@ p {
 
 .navbar-nav>li>.dropdown-menu {
   width: 100%;
+  border-radius: 0;
+  border: none;
 }
 
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
     margin-right: -15px;
     margin-left: -15px;
+}
+
+img {
+  padding: 5px;
+  padding-bottom: 8px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+#footer {
+  text-align: center;
 }
