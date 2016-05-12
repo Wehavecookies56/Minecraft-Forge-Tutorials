@@ -13,7 +13,6 @@ a.navbar-brand {
 
 nav.navbar.navbar-inverse {
   margin: 0px;
-  position: fixed;
 }
 
 ul.nav.navbar-nav.nav-justified {
@@ -21,7 +20,6 @@ ul.nav.navbar-nav.nav-justified {
   margin: 0;
   width: 100%;
   float: none;
-  position: fixed;
 }
 
 #navcontainer {
@@ -59,7 +57,6 @@ nav.navbar {
 .header {
   margin: 0px;
   padding: 20px 0px;
-  padding-top: 60px;
   background: #00ADB5;
 }
 

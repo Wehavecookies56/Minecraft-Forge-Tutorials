@@ -54,6 +54,23 @@
   </div>
   <div class="content">
     <div class="container">
+      <div id="contents">
+        <h2>Contents</h2>
+        <hr>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#needed">Things you will need</a></li>
+          <li><a href="#gitrepo">Git repository setup (Optional)</a></li>
+          <li><a href="#setupmdk">Setting up Minecraft Forge</a></li>
+          <ul>
+            <li><a href="#eclipse">With Eclipse</a></li>
+            <li><a href="#idea">With IntelliJ IDEA</a></li>
+          </ul>
+          <li><a href="#gitcommits">Pushing and pulling files to/from your Git repository (Optional)</a></li>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#comments">Comments</a></li>
+        </ul>
+      </div>
      
       <!-- INTRO -->
      
@@ -131,7 +148,7 @@
         
         <!--ECLIPSE SETUP-->
         
-        <h3>With Eclipse</h3>
+        <h3 id="eclipse">With Eclipse</h3>
         <p>Forge has a very easy way to setup Eclipse built in so the process is rather effortless.</p>
         <p>First of all you need to open up Command Prompt (CMD) in your workspace folder which can be done quite easily in Windows 10 (Windows 8 maybe?) by clicking "File > Open command <u>p</u>rompt" while in the workspace folder.</p>
         <img src="http://i.imgur.com/oUz2rvP.png" alt="File > Open command prompt">
@@ -163,7 +180,7 @@
         
         <!--INTELLIJ IDEA SETUP-->
         
-        <h3>With IntelliJ IDEA</h3>
+        <h3 id="idea">With IntelliJ IDEA</h3>
         <p>The setup of IDEA is a bit more complicated than Eclipse but is still fairly simple.</p>
         <p>First thing's first we are not using Eclipse so we can delete the "eclipse" folder.</p>
         <p>Next you will need to launch IDEA. You will be greeted with this window.</p>
@@ -203,6 +220,7 @@
       </div>
       <div id="gitcommits">
         <h2>Pushing and pulling files to/from your Git repository (Optional)</h2>
+        <hr>
         <p>Since this is also to do with Git you can skip this part if you're not using it.</p>
         <p>Pushing files to a Git repository requires files to be different from the files currently in the repository as well as a commit.</p>
         <p>A commit requires files to be staged so we will do that first. Open Git Bash in your workspace folder and type "git status" this will display a list of all the files unstaged and staged. It will also display if you're up to date with the repository.</p>
@@ -220,6 +238,7 @@
       </div>
       <div id="summary">
         <h2>Summary</h2>
+        <hr>
         <p>Great, you've reached the end of this tutorial!</p>
         <p>Here's a summary of what was learnt.</p>
         <ul>
