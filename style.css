@@ -82,6 +82,10 @@ p {
   border: none;
 }
 
+.dd-header {
+  padding-left: 8px;
+}
+
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
     margin-right: -15px;
     margin-left: -15px;

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Mod Tutorial</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+  <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js" type="text/javascript"></script>
+</head>
+<body>
+  <script type="text/javascript">
+     SyntaxHighlighter.all()
+  </script>
+  <nav class="navbar navbar-inverse">
+    <div class="container" id="navcontainer">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <a class="navbar-brand" id="brand">Minecraft Forge Tutorials</a>
+          <li><a href="http://wehavecookies56.co.uk/Minecraft-Forge-Tutorials">Getting Started</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dd-header">Beginner</li>
+              <li><a href="#" class="active">Your first mod</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dd-header">Intermediate</li>
+              <li role="separator" class="divider"></li>
+              <li class="dd-header">Advanced</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">No resources yet</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header">
+    <div class="container">
+      <h1>Your first mod</h1>
+      <p>A tutorial for creating your first mod</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div id="contents">
+        <h2>Contents</h2>
+        <hr>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#needed">Things you will need</a></li>
+          <li><a href="#mainmod">Creating the main mod file</a></li>
+          <li><a href="#modinfo">Creating the mcmod.info</a></li>
+          <li><a href="#proxies">Creating the proxies</a></li>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#comments">Comments</a></li>
+        </ul>
+      </div>
+      <div id="intro">
+        <h2>Introduction</h2>
+        <hr>
+        <p>In this tutorial I will show you how to create a basic mod in Minecraft Forge.</p>
+        <p>This tutorial was made on 12/05/2016 (DD/MM/YYYY) using Minecraft Forge 1.9-12.16.1.1901 although this tutorial envolves a lot of things that haven't changed for a long time and probably won't any time soon. If something does change in the future I will update the tutorial.</p>
+        <p>All the code for these tutorials will be located on my <a href="https://github.com/Wehavecookies56/Minecraft-Forge-Tutorials/">Github repository</a> on separate branches for each tutorial.</p>
+      </div>
+      <div id="needed">
+        <h2>Things you will need</h2>
+        <hr>
+        <p>A project that has been setup with Forge and either Eclipse or IntelliJ IDEA, if you don't have this you can learn how to do this on the <a href="http://wehavecookies56.co.uk/Minecraft-Forge-Tutorials/">Getting Started</a> page</p>
+      </div>
+      <div id="mainmod">
+        <h2>Creating the main mod file</h2>
+        <hr>
+        <p>The main mod file is the file that Forge will use to load your mod.</p>
+        <p>This file is usually named by the name of your mod or project name. So I will be naming it MinecraftForgeTutorials</p>
+        <p>Before we create this file we need to create a package for the mod. This will be located in "/src/main/java/", navigate to this folder in your IDE.</p>
+        <p>You should decide on a name for your package. The naming convention for packages is your domain name reversed then your project name so for example I would use "uk.co.wehavecookies56.minecraftforgetutorials"</p>
+        <p>In Eclipse right click the folder and go to "New > Package", type your package name and click "Finish"</p>
+        <img src="http://i.imgur.com/QlWmKyp.png" alt="New package in Eclipse">
+        <p>In IDEA right click the folder and go to "New > Package" type your package name and click "OK"</p>
+        <img src="http://i.imgur.com/W9IWCBB.png" alt="New package in IDEA">
+        <p>Now we can create the main mod file.</p>
+        <p>In Eclipse right click the package and go to "New > Class", type your class name and click "Finish"</p>
+        <img src="http://i.imgur.com/MVComdD.png" alt="New class in Eclipse">
+        <p>In IDEA right click the package and got to "New > Java Class", type your class name and click "OK"</p>
+        <img src="http://i.imgur.com/Sth6zE4.png" alt="New class in IDEA">
+        <p>It will ask if you want to add the file to Git this will stage the file for you so you don't have to use the "git add" command for the file.</p>
+        <p>Now that the class has been created we need to add the Mod annotation to the class. With the elements "name", "modid" and "version". Here's what it should look like.</p>
+        <pre class="brush: java">
+          @Mod(name = "Minecraft Forge Tutorials", modid = "mft", version = "1.0")
+          public class MinecraftForgeTutorials {
+        </pre>
+        <p>Your "modid" is a unique identifier for your mod that shouldn't contain any special characters or upper case characters. I used "mft" as it is short and easy to type. The other two don't matter too much although your version number should probably follow some form of version conventions.</p>
+        <p>You will also need to import net.minecraftforge.fml.common.Mod which you can do in Eclipse with either Ctrl+Shift+O or hovering over the @Mod and click "import net.minecraftforge.fml.common.Mod". In IDEA press Alt+Enter and click "Import class". Of course you can also manually type in the imports.</p>
+        <p>Your mod file will need to contain three main methods which are called during the three stages of the initialization of the game. These are the preInit, init and postInit.</p>
+        <p>preInit is short for Pre Initialisation, init is short for Initialisation and postInit is short for Post Initialisation. The pre initialisation and the initialisation are called during the loading of the game. The post initialisation is called after the game has loaded.</p>
+        <p>These methods need the EventHandler annotation as well as a parameter with the type (Pre/Post)InitilizationEvent. They do not need a return type and will need to be imported as well.</p>
+        <p>Here's what the methods should look like.</p>
+        <pre class="brush: java">
+          @Mod.EventHandler
+          public void preInit(FMLPreInitializationEvent event) {
+
+          }
+
+          @Mod.EventHandler
+          public void init(FMLInitializationEvent event) {
+
+          }
+
+          @Mod.EventHandler
+          public void postInit(FMLPostInitializationEvent event) {
+
+          }
+        </pre>
+        <p>That's all you need for the main mod file for now.</p>
+        <p>This is what the final class should look like.</p>
+        <pre class="brush: java">
+          package uk.co.wehavecookies56.minecraftforgetutorials;
+
+          import net.minecraftforge.fml.common.Mod;
+          import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+          @Mod(name = "Minecraft Forge Tutorials", modid = "mft", version = "1.0")
+          public class MinecraftForgeTutorials {
+
+              @Mod.EventHandler
+              public void preInit(FMLPreInitializationEvent event) {
+
+              }
+
+              @Mod.EventHandler
+              public void init(FMLInitializationEvent event) {
+
+              }
+
+              @Mod.EventHandler
+              public void postInit(FMLPostInitializationEvent event) {
+
+              }
+          }
+        </pre>
+      </div>
+      <div id="modinfo">
+        <h2>Creating the mcmod.info</h2>
+        <hr>
+        <p>The mcmod.info is a file that is used to provide information about your mod on the mod GUI located on the main menu.</p>
+        <p>Create a new file called "mcmod.info" in "src/main/resources/" make sure the file has the ".info" file extension.</p>
+        <p>This is an example of what the file should contain</p>
+        <pre class="brush: java">
+          [
+          {
+            "modid": "mft",
+            "name": "Minecraft Forge Tutorials",
+            "description": "The mod made for my Minecraft Forge Tutorials",
+            "version": "${version}",
+            "mcversion": "${mcversion}",
+            "url": "https://github.com/Wehavecookies56/Minecraft-Forge-Tutorials",
+            "updateUrl": "",
+            "authorList": ["Wehavecookies56"],
+            "credits": "Credit to the Forge and FML guys for being awesome.",
+            "logoFile": "",
+            "screenshots": [],
+            "requiredMods": [],
+            "dependencies": [],
+            "dependants": [],
+            "useDependencyInformation": true
+          }
+          ]
+        </pre>
+        <p>"modid" and "name" should be the same as what you set it as in the Mod annotation. "version" and "mcversion" is the version of the mod and the version of Minecraft the mod is for, these are set as "${version}" and "${mcversion}" which will be automatically changed to the version and mcversion from the build.gradle when your mod is built. The other elements are fairly simple to fill out. "requiredMods", "dependencies" and "dependants" should use the mod id of the mod. The elements which are arrays should have commas separating each value for example if you have more than one mod author "authorList" would have "["Wehavecookies56", "Author2", "Author3"]"</p>
+        <p>That's it for the mcmod.info file.</p>
+      </div>
+      <div id="proxies">
+        <h2>Creating the proxies</h2>
+        <hr>
+        <p>Proxies are used for initialising things on a specifically on either the server or client. The Client Proxy is the most helpful one as it will be used for anything to do with registering textures, models, etc.</p>
+        <p>We will be creating a new package inside our current package named "proxies". Then two files named "CommonProxy" and "ClientProxy". The ClientProxy class should extend CommonProxy. The CommonProxy should also contain a preInit, init and postInit methods. They should take the same arguments as the methods in the main mod file. These methods should be overriden in the ClientProxy which can be done quickly in IDEA by pressing Ctrl+O and selecting the methods you want to override, the super statements are not needed. These two classes should like these:</p>
+        <p>CommonProxy</p>
+        <pre class="brush: java">
+          package uk.co.wehavecookies56.minecraftforgetutorials.proxies;
+
+          import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+          public class CommonProxy {
+
+              public void preInit(FMLPreInitializationEvent event) {
+
+              }
+
+              public void init(FMLInitializationEvent event) {
+
+              }
+
+              public void postInit(FMLPostInitializationEvent event) {
+
+              }
+          }
+        </pre>
+        <p>ClientProxy</p>
+        <pre class="brush: java">
+          package uk.co.wehavecookies56.minecraftforgetutorials.proxies;
+
+          import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+          public class ClientProxy extends CommonProxy {
+
+              @Override
+              public void preInit(FMLPreInitializationEvent event) {
+                  
+              }
+
+              @Override
+              public void init(FMLInitializationEvent event) {
+                  
+              }
+
+              @Override
+              public void postInit(FMLPostInitializationEvent event) {
+                  
+              }
+          }
+        </pre>
+        <p>Now we have these classes created, we need to call these three methods as well as register our proxies in our main mod file.</p>
+        <p>The proxy is registered using the SidedProxy annotation like so</p>
+        <pre class="brush: java">
+          @SidedProxy(clientSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.ClientProxy", serverSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.CommonProxy")
+          public static CommonProxy proxy;
+        </pre>
+        <p>This should be inside your main mod class outside all of the methods. The "clientSide" and "serverSide" elements are set to the locations of each of the proxies.</p>
+        <p>"clientSide" should be the location of your ClientProxy and which is the "package name" + ".ClientProxy" and "serverProxy" should be the same but with the Common Proxy instead.</p>
+        <p>We then need to call the methods from the proxies in the initialisation methods.</p>
+        <pre class="brush: java">
+          proxy.preInit(event);
+        </pre>
+        <p>And the same for each one.</p>
+        <p>That it for the proxies. The final main mod class should look like this</p>
+        <pre class="brush: java">
+          package uk.co.wehavecookies56.minecraftforgetutorials;
+
+          import net.minecraftforge.fml.common.Mod;
+          import net.minecraftforge.fml.common.SidedProxy;
+          import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+          import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+          import uk.co.wehavecookies56.minecraftforgetutorials.proxies.CommonProxy;
+
+          @Mod(name = "Minecraft Forge Tutorials", modid = "mft", version = "1.0")
+          public class MinecraftForgeTutorials {
+
+              @SidedProxy(clientSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.ClientProxy", serverSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.CommonProxy")
+              public static CommonProxy proxy;
+
+              @Mod.EventHandler
+              public void preInit(FMLPreInitializationEvent event) {
+                  proxy.preInit(event);
+              }
+
+              @Mod.EventHandler
+              public void init(FMLInitializationEvent event) {
+                  proxy.init(event);
+              }
+
+              @Mod.EventHandler
+              public void postInit(FMLPostInitializationEvent event) {
+                  proxy.postInit(event);
+              }
+          }
+        </pre>
+      </div>
+      <div id="summary">
+        <h2>Summary</h2>
+        <hr>
+        <p>Currently our mod doesn't do anything other than load which isn't very interesting, but now that we have the basics complete we can get on to the interesting stuff.</p>
+        <p>Here's a summary of what we've covered</p>
+        <ul>
+          <li>Creating the main mod file and registering the proxies inside it.</li>
+          <li>Creating the mcmod.info and filling in the information for it.</li>
+          <li>Creating the proxies with the three initialisation methods.</li>
+        </ul>
+        <p>Thank you for reading this tutorial, leave any feedback, questions or anything else in the comments section below.</p>
+      </div>
+    </div>
+  </div>
+  <div id="comments">
+    <div class="container">
+    <h2>Comments</h2>
+    <hr>
+    <div id="disqus_thread"></div>
+      <script>
+      /**
+      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+      */
+      var disqus_config = function () {
+      this.page.url = 'http://wehavecookies56.co.uk/Minecraft-Forge-Tutorials/first_mod'; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = 'MFT/First Mod'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://wehavecookies56.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      <div id="footer">
+        <a href="#">Back to top</a>
+      </div>
+    </div>
+    
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('#brand').click(function(e) {
+      return false;
+    });
+  </script>
+  <script id="dsq-count-scr" src="https://wehavecookies56.disqus.com/count.js" async></script>
+</body>
+</html>
