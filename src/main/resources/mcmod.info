@@ -1,0 +1,19 @@
+[
+{
+  "modid": "mft",
+  "name": "Minecraft Forge Tutorials",
+  "description": "The mod made for my Minecraft Forge Tutorials",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Wehavecookies56/Minecraft-Forge-Tutorials",
+  "updateUrl": "",
+  "authorList": ["Wehavecookies56"],
+  "credits": "Credit to the Forge and FML guys for being awesome.",
+  "logoFile": "",
+  "screenshots": [],
+  "requiredMods": [],
+  "dependencies": [],
+  "dependants": [],
+  "useDependencyInformation": true
+}
+]
