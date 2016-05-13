@@ -102,7 +102,7 @@
         <img src="http://i.imgur.com/Sth6zE4.png" alt="New class in IDEA">
         <p>It will ask if you want to add the file to Git this will stage the file for you so you don't have to use the "git add" command for the file.</p>
         <p>Now that the class has been created we need to add the Mod annotation to the class. With the elements "name", "modid" and "version". Here's what it should look like.</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           @Mod(name = "Minecraft Forge Tutorials", modid = "mft", version = "1.0")
           public class MinecraftForgeTutorials {
         </pre>
@@ -112,7 +112,7 @@
         <p>preInit is short for Pre Initialisation, init is short for Initialisation and postInit is short for Post Initialisation. The pre initialisation and the initialisation are called during the loading of the game. The post initialisation is called after the game has loaded.</p>
         <p>These methods need the EventHandler annotation as well as a parameter with the type (Pre/Post)InitilizationEvent. They do not need a return type and will need to be imported as well.</p>
         <p>Here's what the methods should look like.</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           @Mod.EventHandler
           public void preInit(FMLPreInitializationEvent event) {
 
@@ -130,7 +130,7 @@
         </pre>
         <p>That's all you need for the main mod file for now.</p>
         <p>This is what the final class should look like.</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           package uk.co.wehavecookies56.minecraftforgetutorials;
 
           import net.minecraftforge.fml.common.Mod;
@@ -164,7 +164,7 @@
         <p>The mcmod.info is a file that is used to provide information about your mod on the mod GUI located on the main menu.</p>
         <p>Create a new file called "mcmod.info" in "src/main/resources/" make sure the file has the ".info" file extension.</p>
         <p>This is an example of what the file should contain</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           [
           {
             "modid": "mft",
@@ -194,7 +194,7 @@
         <p>Proxies are used for initialising things on a specifically on either the server or client. The Client Proxy is the most helpful one as it will be used for anything to do with registering textures, models, etc.</p>
         <p>We will be creating a new package inside our current package named "proxies". Then two files named "CommonProxy" and "ClientProxy". The ClientProxy class should extend CommonProxy. The CommonProxy should also contain a preInit, init and postInit methods. They should take the same arguments as the methods in the main mod file. These methods should be overriden in the ClientProxy which can be done quickly in IDEA by pressing Ctrl+O and selecting the methods you want to override, the super statements are not needed. These two classes should like these:</p>
         <p>CommonProxy</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           package uk.co.wehavecookies56.minecraftforgetutorials.proxies;
 
           import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -217,7 +217,7 @@
           }
         </pre>
         <p>ClientProxy</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           package uk.co.wehavecookies56.minecraftforgetutorials.proxies;
 
           import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -244,19 +244,19 @@
         </pre>
         <p>Now we have these classes created, we need to call these three methods as well as register our proxies in our main mod file.</p>
         <p>The proxy is registered using the SidedProxy annotation like so</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           @SidedProxy(clientSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.ClientProxy", serverSide = "uk.co.wehavecookies56.minecraftforgetutorials.proxies.CommonProxy")
           public static CommonProxy proxy;
         </pre>
         <p>This should be inside your main mod class outside all of the methods. The "clientSide" and "serverSide" elements are set to the locations of each of the proxies.</p>
         <p>"clientSide" should be the location of your ClientProxy and which is the "package name" + ".ClientProxy" and "serverProxy" should be the same but with the Common Proxy instead.</p>
         <p>We then need to call the methods from the proxies in the initialisation methods.</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           proxy.preInit(event);
         </pre>
         <p>And the same for each one.</p>
         <p>That it for the proxies. The final main mod class should look like this</p>
-        <pre class="brush: java">
+        <pre class="brush: java; toolbar: false;">
           package uk.co.wehavecookies56.minecraftforgetutorials;
 
           import net.minecraftforge.fml.common.Mod;
